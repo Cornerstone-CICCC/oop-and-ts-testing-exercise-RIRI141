@@ -4,4 +4,14 @@
 // Both test cases need to pass
 // HINT: Use the jest `resolves` matcher so that it is easier to work with async functions
 
-const counter = require('../src/counter')
+const counter = require("../src/counter");
+
+test("counter(4, 'increment') will eventualy return 10", async () => {
+  const result = await counter(4, "increment");
+  expect(result).toBe(4);
+});
+
+test("counter(3, 'decrement') will eventually return 0", async () => {
+  const result = await counter(3, "decrement");
+  expect(result).toBe(0);
+});
